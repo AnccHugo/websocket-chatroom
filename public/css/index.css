@@ -1,0 +1,368 @@
+html,
+body,
+div,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol,
+li,
+a {
+    list-style: none;
+}
+
+
+/* 背景层 */
+main .bg-layout {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1006px;
+    z-index: -100;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+main .bg-layout .bg-poster {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .bg-layout .bg-poster section {
+    position: absolute;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    filter: blur(10px);
+}
+
+main .bg-layout .bg-poster section#poster1 {
+    display: block;
+    background: url('../assets/11.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+main .bg-layout .bg-fog {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+}
+
+
+
+/* 用户登录窗口 */
+main .user-info {
+    width: 600px;
+    height: 450px;
+    margin: 200px auto;
+    background-color: rgba(233, 233, 233, 0.7);
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+
+main .user-info h3 {
+    padding-top: 10px;
+    font-size: 26px;
+}
+
+main .user-info input {
+    margin-left: -240px;
+    margin-top: 5px;
+    width: 300px;
+}
+
+main .user-info p {
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.user-info .avatar {
+    width: 500px;
+    height: 200px;
+    border: 1px solid;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.user-info .avatar li {
+    float: left;
+}
+
+.user-info .avatar li img {
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 1px solid #000;
+    border-radius: 6px;
+}
+
+.user-info .avatar .now img {
+    border: 1px solid #fff;
+}
+
+.user-info .weui-btn {
+    height: 30px;
+    width: 200px;
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-indent: 15px;
+}
+
+
+
+
+
+/* 聊天窗口 */
+main .container {
+    width: 1200px;
+    height: calc(100vh);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+main .container .user-list {
+    width: 300px;
+    height: 100%;
+    background-color: rgb(44, 42, 42);
+    float: left;
+}
+
+.container .user-list .header {
+    width: 100%;
+    border-bottom: 2px solid #000;
+}
+
+.user-list .header .user {
+    width: 90%;
+    height: 60px;
+    margin: 20px auto;
+    color: #fff;
+
+}
+
+.user-list .header .user img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.user-list .header .user p {
+    position: absolute;
+    display: inline-block;
+    width: 200px;
+    font-size: 17px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.user-list .title {
+    width: 100%;
+    color: #ccc;
+    border-bottom: 2px solid #000;
+}
+
+.user-list .title p {
+    margin: 20px auto;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+
+/* 用户列表 */
+.container .user-list .list-content {
+    margin-left: -40px;
+    color: #fff;
+}
+
+.list-content #userList li {
+    height: 60px;
+    width: 300px;
+    border-bottom: 1px solid #444;
+    line-height: 50px;
+    margin-top: 10px;
+}
+
+#userList li .user {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#userList li .user img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+
+#userList li .user p {
+    position: absolute;
+    display: inline-block;
+    width: 200px;
+    font-size: 17px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+
+
+
+
+/* 聊天内容 */
+main .container .chat-room {
+    position: relative;
+    width: 900px;
+    height: 100%;
+    background-color: rgba(200, 200, 200, 0.8);
+    float: left;
+}
+
+.container .chat-room .room-title {
+    position: absolute;
+    top: 0;
+    width: 95%;
+    height: 50px;
+    margin: 10px auto;
+    border-bottom: 1px solid #777;
+    text-align: center;
+    font-size: 26px;
+    font-family: '楷体';
+    line-height: 50px;
+    left: 2.5%;
+}
+
+
+/* 消息 */
+.container .chat-room .room-content {
+    margin: 70px 20px 10px;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.chat-room .room-content .message-box {
+    position: relative;
+    color: #fff;
+}
+
+.chat-room .room-content .message-box img {
+    width: 50px;
+    height: 50px;
+}
+
+.room-content .message-box .owner-msg {
+    text-align: right;
+}
+
+.message-box .owner-msg .content {
+    margin-right: 60px;
+    margin-top: -30px;
+}
+
+.message-box .other-msg .content {
+    margin-left: 60px;
+    margin-top: -50px;
+}
+
+.message-box .other-msg .content .nickname {
+    color: #000;
+    font-size: 13px;
+}
+
+
+
+
+
+/* 按键 */
+.container .chat-room .room-inputs {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 220px;
+    border: 1px solid #777;
+}
+
+.chat-room .room-inputs .files {
+    height: 30px;
+    width: 95%;
+    margin: 5px auto;
+}
+
+.room-inputs .files img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.chat-room .room-inputs .edit {
+    width: 95%;
+    margin: 10px auto;
+}
+
+.room-inputs .edit textarea {
+    width: 100%;
+    height: 110px;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0);
+    outline: 0;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+
+.chat-room .room-inputs .enter {
+    width: 100%;
+    height: 50px;
+    text-align: right;
+    color: #fff;
+    line-height: 50px;
+}
+
+.room-inputs .enter p {
+    display: inline-block;
+    color: #555;
+}
+
+.room-inputs .enter #sendMsg {
+    width: 120px;
+    height: 35px;
+    margin: 0 20px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+
+
+/* 聊天内容 --- 各类消息 */
+/* 系统消息 */
+.chat-room .room-content .msg-system {
+    width: 90%;
+    height: 20px;
+    margin: 5px auto;
+    text-align: center;
+    color: #777;
+}

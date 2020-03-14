@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天室</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-3.0.0.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <main>
+        <!-- 背景层 -->
+        <div class="bg-layout">
+            <div class="bg-poster">
+                <section id="poster1"></section>
+            </div>
+            <div class="bg-fog"></div>
+        </div>
+
+        <!-- 用户登录窗口 -->
+        <div class="user-info" style="display: block;">
+            <h3>用户登录</h3>
+            <p>用户名</p>
+            <input type="text" placeholder="请输入用户名" id="txtUsername">
+            <P>选择头像</P>
+            <ul class="avatar" id="login_avatar">
+                <li><img src="./assets/1.jpg"></li>
+                <li><img src="./assets/2.jpg"></li>
+                <li><img src="./assets/3.jpg"></li>
+                <li><img src="./assets/4.jpg"></li>
+                <li><img src="./assets/5.jpg"></li>
+                <li><img src="./assets/6.jpg"></li>
+                <li><img src="./assets/7.jpg"></li>
+                <li><img src="./assets/8.jpg"></li>
+                <li><img src="./assets/9.jpg"></li>
+                <li><img src="./assets/10.jpg"></li>
+            </ul>
+            <button class="weui-btn" id="loginBtn">登录</button>
+        </div>
+
+        <!-- 用户聊天窗口 -->
+        <div class="container" style="display: none;">
+            <div class="user-list">
+                <div class="header">
+                    <div class="user">
+                        <img src="./assets/1.jpg">
+                        <p class="username">姓名总长度最多十一个字</p>
+                    </div>
+                </div>
+                <div class="title">
+                    <p>用户列表</p>
+                </div>
+                <div class="list-content">
+                    <ul id="userList">
+                        <!-- <li>
+                            <div class="user">
+                                <img src="./assets/2.jpg">
+                                <p class="username">姓名总长度最多十一个字</p>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="chat-room">
+                <div class="room-title">
+                    <p>聊天室(<span></span>)</p>
+                </div>
+                <div class="room-content">
+                    <!-- 系统消息 -->
+                    <!-- <div class="msg-system">
+                        <p>这里是系统消息</p>
+                    </div> -->
+
+                    <!-- 自己的消息 -->
+                    <!-- <div class="message-box">
+                        <div class="owner-msg">
+                            <img src="./assets/1.jpg" class="avatar">
+                            <div class="content">
+                                <div class="bubble">这里是自己的消息内容</div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- 别人的消息 -->
+                    <!-- <div class="message-box">
+                        <div class="other-msg">
+                            <img src="./assets/1.jpg" class="avatar">
+                            <div class="content">
+                                <div class="nickname">这里是用户姓名</div>
+                                <div class="bubble">这里是其他用户消息</div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+                <div class="room-inputs">
+                    <div class="files">
+                        <img src="./assets/emoji.svg" id="emoji">
+                        <img src="./assets/shear.svg" id="shear">
+                        <img src="./assets/file.svg" id="file">
+                    </div>
+                    <div class="edit">
+                        <textarea name="" id="msgContent"></textarea>
+                    </div>
+                    <div class="enter">
+                        <p>按下 Ctrl + Enter 发送</p>
+                        <button id="sendMsg">发送</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
